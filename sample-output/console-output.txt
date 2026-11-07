@@ -1,0 +1,64 @@
+
+========== EMPLOYEE DIRECTORY ==========
+101   Ananya Sharma      Full-Time    Engineering     20 days
+102   Rohan Mehta        Part-Time    Marketing       10 days
+103   Priya Nair         Intern       Design           5 days
+104   Arjun Rao          Manager      Engineering     30 days
+
+========== POLYMORPHIC EMPLOYEE DETAILS ==========
+Employee ID   : 101
+Name          : Ananya Sharma
+Department    : Engineering
+Employee type : Full-Time
+Leave balance : 20 day(s)
+Max/request   : 10 day(s)
+----------------------------------------
+Employee ID   : 102
+Name          : Rohan Mehta
+Department    : Marketing
+Employee type : Part-Time
+Leave balance : 10 day(s)
+Max/request   : 5 day(s)
+----------------------------------------
+Employee ID   : 103
+Name          : Priya Nair
+Department    : Design
+Employee type : Intern
+Leave balance : 5 day(s)
+Max/request   : 2 day(s)
+----------------------------------------
+Employee ID   : 104
+Name          : Arjun Rao
+Department    : Engineering
+Employee type : Manager
+Leave balance : 30 day(s)
+Max/request   : 15 day(s)
+----------------------------------------
+
+========== APPLY FOR LEAVE ==========
+Approved: Request #1 | 3 day(s) | Family function | 2026-11-07 | APPROVED
+Approved: Request #1 | 2 day(s) | Personal | 2026-11-07 | APPROVED
+Approved: Request #1 | 1 day(s) | Personal work | 2026-11-07 | APPROVED
+Approved: Request #1 | 12 day(s) | Annual vacation | 2026-11-07 | APPROVED
+
+========== UPDATED BALANCES ==========
+Ananya Sharma | Leave balance: 17 day(s)
+Rohan Mehta | Leave balance: 8 day(s)
+Priya Nair | Leave balance: 4 day(s)
+Arjun Rao | Leave balance: 18 day(s)
+
+========== CANCEL A REQUEST ==========
+Cancelled request #1
+Ananya Sharma | Leave balance: 20 day(s)
+
+========== LEAVE HISTORY ==========
+Leave history for Ananya Sharma:
+  Request #1 | 3 day(s) | Family function | 2026-11-07 | CANCELLED
+Leave history for Arjun Rao:
+  Request #1 | 12 day(s) | Annual vacation | 2026-11-07 | APPROVED
+
+========== VALIDATION / EXCEPTION HANDLING ==========
+Request rejected: Intern employees can request at most 2 consecutive day(s).
+Registration rejected: Employee ID already exists: 101
+
+Application demonstration completed.
