@@ -1,0 +1,54 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Employee {
+  - employeeId: int
+  - employeeName: String
+  - department: String
+  - leaveBalance: int
+  - leaveRequests: List<LeaveRequest>
+  + applyLeave(days: int): LeaveRequest
+  + applyLeave(days: int, reason: String): LeaveRequest
+  + cancelLeave(requestId: int): void
+  + cancelLeave(request: LeaveRequest): void
+  + checkLeaveBalance(): void
+  + displayDetails(): void
+  + displayLeaveHistory(): void
+  {abstract} + getEmployeeType(): String
+  {abstract} + getMaximumConsecutiveLeaveDays(): int
+}
+
+class FullTimeEmployee
+class PartTimeEmployee
+class Intern
+class Manager
+
+class LeaveRequest {
+  - requestId: int
+  - days: int
+  - reason: String
+  - requestDate: LocalDate
+  - status: LeaveStatus
+  + markCancelled(): void
+}
+
+enum LeaveStatus {
+  APPROVED
+  CANCELLED
+}
+
+class LeaveManagementSystem {
+  - employees: Map<Integer, Employee>
+  + addEmployee(employee: Employee): void
+  + findEmployee(employeeId: int): Employee
+  + displayAllEmployees(): void
+}
+
+Employee <|-- FullTimeEmployee
+Employee <|-- PartTimeEmployee
+Employee <|-- Intern
+Employee <|-- Manager
+Employee "1" *-- "0..*" LeaveRequest
+LeaveRequest --> LeaveStatus
+LeaveManagementSystem o-- "0..*" Employee
+@enduml
